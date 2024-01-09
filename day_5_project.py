@@ -56,7 +56,7 @@ for symbol in range(1, nr_symbols + 1):
 for num in range(1, nr_numbers + 1):
     password_hard.append(random.choice(numbers))
 
-random.shuffle(password_hard)
+random.shuffle(password_hard) # shuffle the list
 final_password = ''.join(password_hard)
 
 print(f"Here is your password: {final_password}")
