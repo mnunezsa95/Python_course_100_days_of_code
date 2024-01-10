@@ -1,3 +1,7 @@
+# ------------------------------------------------------------------------------------------------ #
+#                                           Hangman Game                                           #
+# ------------------------------------------------------------------------------------------------ #
+
 from hangman_words import word_list # import hangman words 
 from hangman_art import stages, logo # import stages array and logo var
 import random # import random module

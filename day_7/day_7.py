@@ -1,3 +1,7 @@
+# ------------------------------------------------------------------------------------------------ #
+#                                         Hangman-Beginner                                         #
+# ------------------------------------------------------------------------------------------------ #
+
 #--1: Import the hangman_art and hangman_words
 #--2: Update the word list to use 'word_list from hangman_words.py
 #--3: Import the logo from hangman_art.py and print it at the start of the game.
