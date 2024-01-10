@@ -32,11 +32,13 @@ for _ in chosen_word: # Use _ to signify a placeholder variable (a placeholder s
 #--12: Print the ASCII art from 'stages' that corresponds to the current number of 'lives' the user has remaining
 
 end_of_game = False
-guesses = []
 
 while not end_of_game:
     guess = input("Choose a letter. ").lower()
-    guesses.append(guess)
+    
+    if guess in display:
+        print(f"You've already guessed {guess}")
+        
     
     for i in range(len(chosen_word)):
         if chosen_word[i] == guess:
@@ -44,7 +46,7 @@ while not end_of_game:
     print(display)
     
     if guess not in chosen_word:
-        print(f"{guess} is not in the word.")
+        print(f"{guess} is not a letter in the word. You lose a life :(")
         lives -= 1
         if lives == 0:
             end_of_game = True
