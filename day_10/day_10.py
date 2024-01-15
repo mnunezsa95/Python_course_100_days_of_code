@@ -38,3 +38,13 @@ def format_name2(f_name, l_name):
     formatted_f_name = f_name.title()
     formatted_l_name = l_name.title()
     return f"{formatted_f_name} {formatted_l_name}"
+
+
+### print() vs return
+# --print() is used to print something to the console
+# --return is used to create an output that can be used later in the code (as an input to other functions)
+
+
+### Recursion
+# -- Recursion --> a function that has the ability to call itself
+# -- MUST BE CAREFUL because recursive functions can lead to infinite loops (add a condition to exit or proceed)
