@@ -18,7 +18,12 @@ def get_random_account():
 
 # Format account data into printable format.
 def format_person(person, position):
-    print(f"Compare {position}: {person["name"]}, a(n) {person["description"]}, from {person["country"]}")
+    statement = ""
+    if position == "A":
+        statement = "Compare"
+    else: 
+        statement = "Against"
+    print(f"{statement} {position}: {person["name"]}, a(n) {person["description"]}, from {person["country"]}")
 
 # Check if user is correct
 def check_answer(guess, a_followers, b_followers):
@@ -32,11 +37,11 @@ def play_game():
     print(logo) # Print logo
     score = 0 # Generate score variable
     should_game_continue = True # variable for loop
+    # Generate people & follower
     person_a = get_random_account()
     person_b = get_random_account()
     
-    while should_game_continue:
-    # Generate people & follower
+    while should_game_continue: # if person_a and person_b are the same change person b
         person_a = person_b
         person_b = get_random_account()
         
@@ -51,7 +56,7 @@ def play_game():
         user_guess = input("Who has more followers? Type 'A' or 'B': ").lower() # Ask user for a guess.
         person_a_followers = person_a["follower_count"]
         person_b_followers = person_b["follower_count"]
-        is_correct = check_answer(user_guess, person_a_followers ,person_b_followers)
+        is_correct = check_answer(user_guess, person_a_followers, person_b_followers)
         
         cls()
         print(logo) # Print logo
@@ -65,5 +70,5 @@ def play_game():
         # Make game repeatable.
         # Make B become the next A.
         # Clear screen between rounds.
-
+        
 play_game()
