@@ -51,7 +51,46 @@ print(average2)
 max_value = data["temp"].max()
 print(max_value)
 
-# Selecting Columns
+# Get Data in Columns
 # - Data can be accessed using the column name using square bracket notation or dot notation
 print(data["condition"])
 print(data.condition)
+
+# Selecting Data in Rows
+print(data[data.day == "Monday"])  # Selecting the row where the day is Monday
+print(data[data.temp == max_value])  # Selecting the row where the temp is highest
+
+monday = data[data.day == "Monday"]
+print(monday.condition)  # Getting a specific column within a row
+
+temp_monday = data[data.day == "Monday"].temp
+temp_monday_f = (temp_monday * 9 / 5) + 32
+print(temp_monday_f)
+
+### Creating a DataFrame from scratch
+data_dict = {"students": ["Amy", "James", "Angela"], "scores": [76, 56, 65]}
+new_data_frame = pandas.DataFrame(data_dict)
+print(new_data_frame)
+new_data_frame.to_csv("new_data.csv")
+
+
+# ------------------------------------------------------------------------------------------------ #
+#                                            Challenge 1                                           #
+# ------------------------------------------------------------------------------------------------ #
+squirrel_data = pandas.read_csv("day_25/2018_Squirrel_Data.csv")
+grey_squirrels_count = len(squirrel_data[squirrel_data["Primary Fur Color"] == "Gray"])
+red_squirrels_count = len(
+    squirrel_data[squirrel_data["Primary Fur Color"] == "Cinnamon"]
+)
+black_squirrels_count = len(
+    squirrel_data[squirrel_data["Primary Fur Color"] == "Black"]
+)
+
+squirrel_dict = {
+    "Fur Color": ["grey", "red", "black"],
+    "Count": [grey_squirrels_count, red_squirrels_count, black_squirrels_count],
+}
+
+squirrel_data_frame = pandas.DataFrame(squirrel_dict)
+print(squirrel_data_frame)
+df_squirrel = squirrel_data_frame.to_csv("squirrel")
