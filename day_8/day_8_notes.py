@@ -7,6 +7,7 @@
 # --Parameters are variables used when defining the function
 # --Arguments are the values of the data used when the function is called
 
+
 # functions begin with the def keyword
 # parameters allow for the param to be passed into function for use
 def greet(name, birth_country, current_city):
@@ -22,9 +23,8 @@ greet("Marlon", "Costa Rica", "Boston")
 # --Positional arguments are arguments passed in order to the parameters when calling the function
 # --Keyword arguments are arguments assigned to the parameter name when calling the function
 
+
 # Using keyword arguments
-
-
 def greet_with_keyword_arguments(name, birth_country, current_city):
     print(f"My name is {name}.")
     print(f"I am from {birth_country}.")
