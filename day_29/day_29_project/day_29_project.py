@@ -1,13 +1,15 @@
-# ---------------------------------- My Password Manager Project --------------------------------- #
+# ------------------------------------------------------------------------------------------------ #
+#                                    My Password Manager Project                                   #
+# ------------------------------------------------------------------------------------------------ #
+
+# Imports
 import pyperclip
 from tkinter import *
 from tkinter import messagebox
 from random import randint, choice, shuffle
 
+
 # -------------------------------------- PASSWORD GENERATOR -------------------------------------- #
-# Password Generator Project
-
-
 def generate_password():
     password_entry.delete(0, END)
     letters = [
