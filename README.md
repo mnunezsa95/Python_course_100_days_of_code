@@ -1,1 +1,1 @@
-# Python_course_100_days_of_code
+# Python Course - 100 Days of Code
