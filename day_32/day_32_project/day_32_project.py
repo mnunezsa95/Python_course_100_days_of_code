@@ -6,8 +6,11 @@ import smtplib
 import pandas as pd
 import random
 
-MY_EMAIL = "mndev@gmail.com"
-MY_PASSWORD = "ppgclzvacfissewq"
+with open("sensitive_info/day_32_credentials.txt") as credentials:
+    credentialsArray = credentials.readlines()
+    MY_EMAIL = str(credentialsArray[0])
+    MY_PASSWORD = str(credentialsArray[1])
+
 
 today = dt.datetime.now()
 today_tuple = (today.month, today.day)

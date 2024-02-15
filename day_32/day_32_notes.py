@@ -6,17 +6,17 @@
 
 import smtplib
 
-# my_email = "mndev@gmail.com"
-# password = "ppgclzvacfissewq"
+my_email = "mndev@gmail.com"
+password = "ppgclzvacfissewq"
 
-# with smtplib.SMTP("smtp.gmail.com") as connection:  # creating a connection to gmail
-#     connection.starttls()  # securing connection to email server
-#     connection.login(user=my_email, password=password)
-#     connection.sendmail(
-#         from_addr=my_email,
-#         to_addrs="marlonnunez.dev@gmail.com",
-#         msg="Subject:Hello, Marlon!\n\nThis is the body of my email",
-#     )
+with smtplib.SMTP("smtp.gmail.com") as connection:  # creating a connection to gmail
+    connection.starttls()  # securing connection to email server
+    connection.login(user=my_email, password=password)
+    connection.sendmail(
+        from_addr=my_email,
+        to_addrs="marlonnunez.dev@gmail.com",
+        msg="Subject:Hello, Marlon!\n\nThis is the body of my email",
+    )
 
 
 # --------------------------------- Working with datetime module --------------------------------- #
