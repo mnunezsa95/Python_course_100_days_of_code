@@ -1,5 +1,6 @@
 .DS_Store
 venv
 sensitive_info
+.env
 
 birthdays.csv
