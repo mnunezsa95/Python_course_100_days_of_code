@@ -44,7 +44,7 @@ price_difference = float(yesterday_closing_price) - float(
 )
 
 up_down = None
-if difference > 0:
+if price_difference > 0:
     up_down = "🔺"
 else:
     up_down = "🔻"
