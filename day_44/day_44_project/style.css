@@ -1,0 +1,22 @@
+body {
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+div {
+  margin-top: 10%;
+}
+
+#title {
+  font-family: "Libre Baskerville", serif;
+}
+
+img {
+  border: 10px solid white;
+  width: 50%;
+}
+
+#subtitle {
+  font-size: 20px;
+}
