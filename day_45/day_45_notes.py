@@ -50,3 +50,45 @@ heading_all = soup.select(".heading")
 print(heading_all)
 
 # ----------------------------------- Scrapping a Live Website ----------------------------------- #
+
+import requests
+import pprint
+
+# Getting back an HTML document using requests API call
+response = requests.get("https://news.ycombinator.com/")
+yc_web_page = response.text
+
+soup2 = BeautifulSoup(yc_web_page, "html.parser")
+print(soup2.title)
+
+
+# Creating lists to hold results
+article_texts = []
+article_links = []
+
+
+articles = soup2.find_all(name="span", class_="titleline")
+
+# Grabbing the article names and links
+for article_tag in articles:
+    article_texts.append(article_tag.find("a").getText())
+    article_links.append(article_tag.find("a").get("href"))
+
+# Grabbing the article votes
+article_votes = [
+    int(score.getText().split()[0])
+    for score in soup2.find_all(name="span", class_="score")
+]
+
+# Printing the lists
+pprint.pprint(article_texts)
+pprint.pprint(article_links)
+pprint.pprint(article_votes)
+
+# Finding index of highest upvoted article
+largest_number = max(article_votes)
+largest_index = article_votes.index(largest_number)
+
+# Finding the article text and article link for the highest upvoted article
+print(article_texts[largest_index + 1])
+print(article_links[largest_index + 1])
