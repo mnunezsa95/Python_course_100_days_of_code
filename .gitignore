@@ -2,5 +2,6 @@
 venv
 sensitive_info
 .env
+token.txt
 
 birthdays.csv

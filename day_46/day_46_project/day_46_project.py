@@ -22,7 +22,7 @@ sp = spotipy.Spotify(
         client_id=CLIENT_ID,
         client_secret=CLIENT_SECRET,
         show_dialog=True,
-        cache_path="day_46/day_46_project/token.txt",
+        cache_path="sensitive_info/token.txt",
         username=USERNAME,
     )
 )
