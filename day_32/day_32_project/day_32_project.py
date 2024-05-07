@@ -5,11 +5,12 @@ import datetime as dt
 import smtplib
 import pandas as pd
 import random
+import dotenv
 
-with open("sensitive_info/day_32_credentials.txt") as credentials:
-    credentialsArray = credentials.readlines()
-    MY_EMAIL = str(credentialsArray[0])
-    MY_PASSWORD = str(credentialsArray[1])
+credentials = dotenv.dotenv_values()
+MY_EMAIL = credentials["SMTP_USERNAME"]
+PASSWORD = credentials["SMTP_PASSWORD"]
+SEND_ADDRESS = credentials["SMTP_SEND_ADDRESS"]
 
 
 today = dt.datetime.now()
@@ -18,6 +19,7 @@ data = pd.read_csv("day_32/day_32_project/birthdays.csv")
 birthdays_dict = {
     (data_row.month, data_row.day): data_row for (index, data_row) in data.iterrows()
 }
+
 if today_tuple in birthdays_dict:
     birthday_person = birthdays_dict[today_tuple]
     with open(

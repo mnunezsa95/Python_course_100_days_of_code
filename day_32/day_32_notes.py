@@ -5,16 +5,19 @@
 # ----------------------------------- Sending Emails using SMTP ---------------------------------- #
 
 import smtplib
+import dotenv
 
-my_email = "mndev@gmail.com"
-password = "ppgclzvacfissewq"
+credentials = dotenv.dotenv_values()
+MY_EMAIL = credentials["SMTP_USERNAME"]
+PASSWORD = credentials["SMTP_PASSWORD"]
+SEND_ADDRESS = credentials["SMTP_SEND_ADDRESS"]
 
 with smtplib.SMTP("smtp.gmail.com") as connection:  # creating a connection to gmail
     connection.starttls()  # securing connection to email server
-    connection.login(user=my_email, password=password)
+    connection.login(user=MY_EMAIL, password=PASSWORD)
     connection.sendmail(
-        from_addr=my_email,
-        to_addrs="marlonnunez.dev@gmail.com",
+        from_addr=MY_EMAIL,
+        to_addrs=SEND_ADDRESS,
         msg="Subject:Hello, Marlon!\n\nThis is the body of my email",
     )
 
@@ -47,8 +50,7 @@ import random
 
 current_date = dt.datetime.now()
 weekday = current_date.weekday()
-my_email = "mndev@gmail.com"
-password = "ppgclzvacfissewq"
+
 
 if weekday == 0:
     with open("day_32/quotes.txt") as quote_file:  # opening the txt file
@@ -57,9 +59,9 @@ if weekday == 0:
 
     with smtplib.SMTP("smtp.gmail.com") as connection:
         connection.starttls()
-        connection.login(user=my_email, password=password)
+        connection.login(user=MY_EMAIL, password=PASSWORD)
         connection.sendmail(
-            from_addr=my_email,
+            from_addr=MY_EMAIL,
             to_addrs="marlonnunez.dev@gmail.com",
             msg=f"Subject:Monday Motivation\n\n{quote}",
         )
